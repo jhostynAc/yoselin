@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoselin</title>
+    <link rel="stylesheet" href="../style/style3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="stars" id="stars-container"></div>
+
+    <div class="cambiar">
+        <a href="./pagina2.html"><i class="fa-solid fa-star"></i></a>
+        <a href="./pagina4.html"><i class="fa-solid fa-star"></i></a>
+    </div>
+
+    <!-- Reproductor Spotify insertado -->
+    <div class="spotify-wrapper">
+        <iframe class="spotify-player"
+            src="https://open.spotify.com/embed/track/1e3hPMCGrwPXYZ1DQhsiCE?utm_source=generator" width="300"
+            height="80" frameBorder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+        </iframe>
+
+    </div>
+
+    <div class="image-row">
+        <div class="game-field" id="gameField"></div>
+    </div>
+
+    <div class="caption">
+        HA SIDO MUY EMOTIVO Y PERSONAL HASTA AHORA, UN PEQUEÑO BREAK PARA VER ESTE JUEGUITO :D
+    </div>
+
+    <script>
+        const gameField = document.getElementById('gameField');
+
+        // Crear girasoles en filas
+        const filas = 5;
+        const espacioVertical = 300 / filas;
+
+        for (let i = 0; i < filas; i++) {
+            const plant = document.createElement('div');
+            plant.classList.add('plant');
+            plant.style.top = (i * espacioVertical + espacioVertical / 2 - 20) + 'px';
+            plant.style.left = '20px';
+            gameField.appendChild(plant);
+        }
+
+        // Crear zombis
+        setInterval(() => {
+            const zombie = document.createElement('div');
+            zombie.classList.add('zombie');
+            const fila = Math.floor(Math.random() * filas);
+            zombie.style.top = (fila * espacioVertical + espacioVertical / 2 - 30) + 'px';
+            gameField.appendChild(zombie);
+            setTimeout(() => zombie.remove(), 10000);
+        }, 4000);
+
+        // Estrellas
+        const container = document.getElementById("stars-container");
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement("div");
+            star.className = "star";
+            star.style.top = Math.random() * 100 + "%";
+            star.style.left = Math.random() * 100 + "%";
+            star.style.animationDuration = (Math.random() * 3 + 1) + "s";
+            container.appendChild(star);
+        }
+    </script>
+</body>
+
+</html>

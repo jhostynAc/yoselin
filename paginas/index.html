@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoselin</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+
+<body>
+   <div class="stars" id="stars-container"></div>
+
+   <div class="cambiar">
+    <a href="./pagina5.html"><i class="fa-solid fa-star"></i></a>
+    <a href="./pagina2.html"><i class="fa-solid fa-star"></i></a>
+   </div>
+  <button class="audio-button" onclick="document.getElementById('audio').play()">▶ Reproducir audio</button>
+
+  <audio id="audio" src="../audio/Audio de WhatsApp 2025-06-18 a las 13.40.32_ecbde5d3.dat.unknown"></audio>
+
+  <div class="image-row">
+    <img src="../img/Imagen_de_WhatsApp_2025-06-18_a_las_12.58.14_8ac2181b-removebg-preview.png" alt="Imagen izquierda" class="left">
+    <img src="../img/Imagen_de_WhatsApp_2025-06-18_a_las_12.58.14_8ac2181b-removebg-preview.png" alt="Imagen centro" class="middle">
+    <img src="../img/Imagen_de_WhatsApp_2025-06-18_a_las_12.58.14_8ac2181b-removebg-preview.png" alt="Imagen derecha" class="right">
+  </div>
+
+  <div class="caption">
+    SOY (SOMOS) UNO DE VARIAS FORMAS
+  </div>
+
+  <script>
+    const container = document.getElementById("stars-container");
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement("div");
+      star.className = "star";
+      star.style.top = Math.random() * 100 + "%";
+      star.style.left = Math.random() * 100 + "%";
+      star.style.animationDuration = (Math.random() * 3 + 1) + "s";
+      container.appendChild(star);
+    }
+  </script>
+</body>
+
+</html>

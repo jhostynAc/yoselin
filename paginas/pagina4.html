@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoselin</title>
+    <link rel="stylesheet" href="../style/style4.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="stars" id="stars-container"></div>
+
+  <div class="cambiar">
+    <a href="./pagina3.html"><i class="fa-solid fa-star"></i></a>
+    <a href="./pagina5.html"><i class="fa-solid fa-star"></i></a>
+  </div>
+
+  <button class="audio-button" onclick="document.getElementById('audio').play()">▶ Reproducir audio</button>
+
+  <audio id="audio" src="../audio/Audio de WhatsApp 2025-06-18 a las 13.40.32_ecbde5d3.dat.unknown"></audio>
+
+  <div class="caption-top">
+SOY UNA AMBICIÓN CONSTANTE
+</div>
+
+<div class="slider" id="slider">
+  <div class="card"><img src="../img/card1.jpg" alt="card 1"></div>
+  <div class="card"><img src="../img/card2.jpg" alt="card 2"></div>
+  <div class="card"><img src="../img/card3.jpg" alt="card 3"></div>
+  <div class="card"><img src="../img/card4.jpg" alt="card 4"></div>
+</div>
+
+<div class="caption">
+ESTAMOS HECHOS DE RAYONES, BORRONES, TRAZOS, DISPARATES Y REPTILES, EN MI CASO
+
+
+</div>
+
+  <script>
+    const container = document.getElementById("stars-container");
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement("div");
+      star.className = "star";
+      star.style.top = Math.random() * 100 + "%";
+      star.style.left = Math.random() * 100 + "%";
+      star.style.animationDuration = (Math.random() * 3 + 1) + "s";
+      container.appendChild(star);
+    }
+     const cards = document.querySelectorAll('.card');
+  let index = 0;
+
+  function showCards() {
+    cards.forEach((card, i) => {
+      const offset = ((i - index + cards.length) % cards.length);
+      const rotation = -35 + offset * 15;
+      const translate = offset * 30;
+
+      card.style.transform = `rotate(${rotation}deg) translateX(${translate}px)`;
+      card.style.zIndex = 100 - offset;
+    });
+  }
+
+  showCards();
+
+  setInterval(() => {
+    index = (index + 1) % cards.length;
+    showCards();
+  }, 2500);
+  </script>
+</body>
+
+</html>
